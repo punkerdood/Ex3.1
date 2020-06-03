@@ -12,19 +12,23 @@ namespace Studio_3
             int i = 0;
             Dictionary<char, int> wholeList = new Dictionary<char, int>();
             Dictionary<char, int> newList = new Dictionary<char, int>();
-            
-            foreach(char letter in input)
+
+
+
+            foreach (char letter in input)
             {
-                wholeList.TryGetValue(letter, out i);
-                wholeList[letter] = i + 1;
-                    
+                if (char.IsLetter(letter))
+                {
+                    wholeList.TryGetValue(letter, out i);
+                    wholeList[letter] = i + 1;
+
+                }
             }
-           
-            foreach (KeyValuePair<char,int> stuff in wholeList)
+            foreach (KeyValuePair<char, int> stuff in wholeList)
             {
                 Console.WriteLine(stuff.Key + " : " + stuff.Value);
             }
-                
+        
 
 
             
